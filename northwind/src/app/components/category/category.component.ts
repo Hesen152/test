@@ -39,7 +39,7 @@ export class CategoryComponent implements OnInit {
   }
 
   getAllCategoryClass(){
-    if (!this.currentCategory) {
+    if (this.currentCategory.categoryName.length<1){
       return  "list-group-item active"
 
     }
@@ -47,5 +47,8 @@ export class CategoryComponent implements OnInit {
       return "list-group-item"
 
     }
+  }
+  removeCurrenCategory(){
+   return  this.currentCategory={categoryId:0,categoryName:""};
   }
 }
